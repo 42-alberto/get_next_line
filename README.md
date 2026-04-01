@@ -31,7 +31,7 @@ This project introduces the fundamental concept of **static variables** in C and
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/42-alberto/get_next_line.git](https://github.com/42-alberto/get_next_line.git)
+    git clone https://github.com/42-alberto/get_next_line.git
     ```
 
 2.  **Compilation:**
