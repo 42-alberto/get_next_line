@@ -58,7 +58,7 @@ int	ft_fill_residue(char **residue, char *buffer)
 			return (0);
 		(*residue)[0] = '\0';
 	}
-	temp = ft_strjoin(*residue, buffer);
+	temp = ft_strjoin_gnl(*residue, buffer);
 	if (temp == NULL)
 		return (0);
 	free (*residue);
@@ -90,10 +90,10 @@ char	*get_next_line(int fd)
 	int			characters_read;
 
 	if (fd < 0 || fd > 1023 || BUFFER_SIZE <= 0)
-		return (NULL);
+		return (ft_free_all(&residue[fd], NULL));
 	buffer = malloc(BUFFER_SIZE + 1);
 	if (!buffer)
-		return (NULL);
+		return (ft_free_all(&residue[fd], buffer));
 	while (!ft_find_end_of_line(residue[fd]))
 	{
 		characters_read = read(fd, buffer, BUFFER_SIZE);
@@ -102,7 +102,7 @@ char	*get_next_line(int fd)
 		buffer[characters_read] = '\0';
 		if (!ft_fill_residue(&residue[fd], buffer))
 			return (ft_free_all(&residue[fd], buffer));
-		if (characters_read < BUFFER_SIZE)
+		if (characters_read < BUFFER_SIZE || ft_find_end_of_line(residue[fd]))
 			break ;
 	}
 	if (!residue[fd] || residue[fd][0] == '\0')

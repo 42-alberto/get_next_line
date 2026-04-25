@@ -14,7 +14,6 @@
 # define GET_NEXT_LINE_BONUS_H
 
 /* Librerías necesarias para usar malloc, free, read, size_t, etc. */
-# include "libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -30,12 +29,8 @@ int		ft_fill_residue(char **residue, char *buffer);
 int		ft_find_end_of_line(char *residue);
 
 /* Prototipos de funciones auxiliares de libft*/
-char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlcat(char *dst, const char *src, size_t dsize);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dsize);
+char	*ft_strjoin_gnl(char const *s1, char const *s2);
 size_t	ft_strlen(const char *c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strdup(const char *s);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif
