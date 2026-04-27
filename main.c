@@ -30,7 +30,7 @@ int	main(void)
 	int		i;
 
 	i = 1;
-	fd1 = open("test3a.txt", O_RDONLY);
+	fd1 = open("test3.txt", O_RDONLY);
 	line1 = get_next_line(fd1);
 	while (line1)
 	{

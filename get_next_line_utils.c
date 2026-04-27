@@ -12,32 +12,19 @@
 
 #include "get_next_line.h"
 
-char	*ft_strjoin_gnl(char const *s1, char const *s2)
+void	ft_strlcat_gnl(char *dst, const char *src)
 {
-	size_t	s1_len;
-	size_t	s2_len;
-	char	*dst;
+	size_t	dst_len;
 	size_t	i;
-	size_t	j;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	if (((size_t) - 1) - s1_len - 1 < s2_len)
-		return (NULL);
-	dst = malloc(sizeof(char) * (s1_len + s2_len + 1));
-	if (dst == NULL)
-		return (NULL);
-	j = 0;
+	dst_len = ft_strlen(dst);
 	i = 0;
-	while (i < s1_len)
-		dst[j++] = s1[i++];
-	i = 0;
-	while (i < s2_len)
-		dst[j++] = s2[i++];
-	dst[j] = '\0';
-	return (dst);
+	while (src[i])
+	{
+		dst [dst_len + i] = src[i];
+		i++;
+	}
+	dst [dst_len + i] = '\0';
 }
 
 size_t	ft_strlen(const char *c)

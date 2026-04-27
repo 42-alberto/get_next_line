@@ -23,13 +23,13 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_create_line(char **line, char **residue);
+char	*ft_create_line(char **residue);
 char	*ft_free_all(char **residue, char *buffer);
-int		ft_fill_residue(char **residue, char *buffer);
+int		ft_fill_residue(char **residue, char *buffer, size_t *resid_buffer_len);
 int		ft_find_end_of_line(char *residue);
 
 /* Prototipos de funciones auxiliares de libft*/
-char	*ft_strjoin_gnl(char const *s1, char const *s2);
+void	ft_strlcat_gnl(char *dst, const char *src);
 size_t	ft_strlen(const char *c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
